@@ -17,6 +17,7 @@ class PostsViewController: UIViewController {
     // MARK: - Private Properties
     private let viewModel: PostsViewModelProtocol
     private var pickerOpened: Bool = false
+    private var dataSource: PostTableViewDatasource?
     
     // MARK: - Outlets
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
@@ -28,6 +29,7 @@ class PostsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        viewModel.load(false)
     }
     
     // MARK: - Init
@@ -55,15 +57,26 @@ class PostsViewController: UIViewController {
         selectUserButton.layer.borderColor = UIColor.white.cgColor
         selectUserButton.layer.borderWidth = 0.5
         selectUserButton.layer.cornerRadius = 8
-        selectUserButton.setTitle(viewModel.users.first?.name ?? "Select User", for: .normal)
+        selectUserButton.setTitle(viewModel.selectedUser?.name ?? "Select User", for: .normal)
+        
+        tableView.registerNib(nibName: "PostTableViewCell", cellIdentifier: PostTableViewCell.cellIdentifier)
+        dataSource = PostTableViewDatasource()
+        tableView.dataSource = dataSource
+        
+        segmentedControl.selectedSegmentIndex = 1
+
     }
     
-    @IBAction func selectUserAction(_ sender: Any) {
+    @IBAction private  func selectUserAction(_ sender: Any) {
         animatePicker()
     }
     
     @objc private func dismissPicker() {
         animatePicker()
+    }
+    
+    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        viewModel.load(sender.selectedSegmentIndex == 0)
     }
     
     private func animatePicker() {
@@ -76,7 +89,6 @@ class PostsViewController: UIViewController {
             }
         }
     }
-    
 }
 
 extension PostsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -87,13 +99,18 @@ extension PostsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return viewModel.users[row].name ?? ""
+        viewModel.users[row].name ?? ""
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let name = viewModel.users[row].name ?? ""
+        viewModel.selectedUser = viewModel.users.get(row)
+        let name = viewModel.users.get(row)?.name ?? ""
         selectUserButton.setTitle(name, for: .normal)
         animatePicker()
+        
+        if segmentedControl.selectedSegmentIndex == 0 {
+            reloadPosts()
+        }
     }
 }
 
@@ -103,6 +120,7 @@ extension PostsViewController: PostsViewProtocol {
     }
     
     func reloadPosts() {
+        dataSource?.update(with: viewModel)
         tableView.reloadData()
     }
 }

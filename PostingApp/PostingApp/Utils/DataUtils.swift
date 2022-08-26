@@ -32,18 +32,18 @@ struct DataUtils {
             PostModel(postId: "1",
                       title: "Think Different",
                       description: "Innovation distinguishes between a leader and a follower.",
-                      postImage: nil,
+                      postImage: "steve_post",
                       user: users[0]),
             
             PostModel(postId: "2",
                       title: "Success is a lousy teacher",
                       description: "Don't compare yourself with anyone in this world… if you do so, you are insulting yourself.",
-                      postImage: nil,
+                      postImage: "",
                       user: users[1]),
             PostModel(postId: "3",
                       title: "Failure is an option here",
-                      description: "Some people don't like change, but you need to embrace change if the alternative is disaster.",
-                      postImage: nil,
+                      description: "Some people don't like change, but you need to embrace change if the alternative is disaster. Some people don't like change, but you need to embrace change if the alternative is disaster.",
+                      postImage: "elon_post",
                       user: users[2])
             
         ]

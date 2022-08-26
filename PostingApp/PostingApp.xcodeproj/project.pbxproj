@@ -22,6 +22,9 @@
 		2F95DA5628B80C0D00045663 /* DataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F95DA5528B80C0D00045663 /* DataPresenter.swift */; };
 		2F95DA5C28B8117B00045663 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F95DA5A28B8117B00045663 /* PostTableViewCell.swift */; };
 		2F95DA5D28B8117B00045663 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F95DA5B28B8117B00045663 /* PostTableViewCell.xib */; };
+		2F99973A28B8F83400A0F4B8 /* PostsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F99973928B8F83400A0F4B8 /* PostsTableViewDelegate.swift */; };
+		2F99973D28B8FB4B00A0F4B8 /* UITableView-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F99973C28B8FB4B00A0F4B8 /* UITableView-Ext.swift */; };
+		2F99973F28B8FC8400A0F4B8 /* Array-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F99973E28B8FC8400A0F4B8 /* Array-Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		2F95DA5528B80C0D00045663 /* DataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPresenter.swift; sourceTree = "<group>"; };
 		2F95DA5A28B8117B00045663 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		2F95DA5B28B8117B00045663 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		2F99973928B8F83400A0F4B8 /* PostsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewDelegate.swift; sourceTree = "<group>"; };
+		2F99973C28B8FB4B00A0F4B8 /* UITableView-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView-Ext.swift"; sourceTree = "<group>"; };
+		2F99973E28B8FC8400A0F4B8 /* Array-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array-Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,7 @@
 		2F95DA4228B7FA6A00045663 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F99973828B8F81A00A0F4B8 /* Datasource & Delegate */,
 				2F95DA5728B8111800045663 /* Cell */,
 				2F95DA3D28B7FA5F00045663 /* PostsViewController.swift */,
 				2F95DA3E28B7FA5F00045663 /* PostsViewController.xib */,
@@ -168,6 +175,7 @@
 		2F95DA5228B8031C00045663 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2F99973B28B8FB4000A0F4B8 /* Extensions */,
 				2F95DA5328B8032E00045663 /* DataUtils.swift */,
 			);
 			path = Utils;
@@ -180,6 +188,23 @@
 				2F95DA5B28B8117B00045663 /* PostTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2F99973828B8F81A00A0F4B8 /* Datasource & Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				2F99973928B8F83400A0F4B8 /* PostsTableViewDelegate.swift */,
+			);
+			path = "Datasource & Delegate";
+			sourceTree = "<group>";
+		};
+		2F99973B28B8FB4000A0F4B8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2F99973C28B8FB4B00A0F4B8 /* UITableView-Ext.swift */,
+				2F99973E28B8FC8400A0F4B8 /* Array-Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F99973D28B8FB4B00A0F4B8 /* UITableView-Ext.swift in Sources */,
 				2F95DA5C28B8117B00045663 /* PostTableViewCell.swift in Sources */,
 				2F95DA4D28B7FDD100045663 /* AppCoordinator.swift in Sources */,
 				2F95DA3F28B7FA5F00045663 /* PostsViewController.swift in Sources */,
@@ -264,7 +290,9 @@
 				2F95DA2628B7A42E00045663 /* AppDelegate.swift in Sources */,
 				2F95DA4F28B7FEBD00045663 /* PostsCoordinator.swift in Sources */,
 				2F95DA5428B8032E00045663 /* DataUtils.swift in Sources */,
+				2F99973A28B8F83400A0F4B8 /* PostsTableViewDelegate.swift in Sources */,
 				2F95DA4528B7FA8800045663 /* PostsViewModel.swift in Sources */,
+				2F99973F28B8FC8400A0F4B8 /* Array-Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

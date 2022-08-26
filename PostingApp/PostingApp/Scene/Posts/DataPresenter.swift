@@ -16,7 +16,11 @@ struct DataPresenter {
     }
     
     var posts: [PostModel] {
-        utilPosts
+        DataUtils.posts
+    }
+    
+    func userPosts(for user: UserModel?) -> [PostModel] {
+        utilPosts.filter { $0.user?.id == user?.id }
     }
     
     mutating func addPost(with post: PostModel) {
