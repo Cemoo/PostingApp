@@ -25,6 +25,12 @@
 		2F99973A28B8F83400A0F4B8 /* PostsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F99973928B8F83400A0F4B8 /* PostsTableViewDelegate.swift */; };
 		2F99973D28B8FB4B00A0F4B8 /* UITableView-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F99973C28B8FB4B00A0F4B8 /* UITableView-Ext.swift */; };
 		2F99973F28B8FC8400A0F4B8 /* Array-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F99973E28B8FC8400A0F4B8 /* Array-Ext.swift */; };
+		2F9DB61528B9119500BE4A27 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9DB61328B9119500BE4A27 /* AddPostViewController.swift */; };
+		2F9DB61628B9119500BE4A27 /* AddPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9DB61428B9119500BE4A27 /* AddPostViewController.xib */; };
+		2F9DB61A28B915FE00BE4A27 /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9DB61928B915FE00BE4A27 /* AddPostViewModel.swift */; };
+		2F9DB61C28B919D000BE4A27 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9DB61B28B919D000BE4A27 /* PostModel.swift */; };
+		2F9DB61F28B91A6B00BE4A27 /* AddPostBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9DB61E28B91A6B00BE4A27 /* AddPostBuilder.swift */; };
+		2F9DB62128B91C7600BE4A27 /* AddPostCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9DB62028B91C7600BE4A27 /* AddPostCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +54,12 @@
 		2F99973928B8F83400A0F4B8 /* PostsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewDelegate.swift; sourceTree = "<group>"; };
 		2F99973C28B8FB4B00A0F4B8 /* UITableView-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView-Ext.swift"; sourceTree = "<group>"; };
 		2F99973E28B8FC8400A0F4B8 /* Array-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array-Ext.swift"; sourceTree = "<group>"; };
+		2F9DB61328B9119500BE4A27 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		2F9DB61428B9119500BE4A27 /* AddPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPostViewController.xib; sourceTree = "<group>"; };
+		2F9DB61928B915FE00BE4A27 /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
+		2F9DB61B28B919D000BE4A27 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		2F9DB61E28B91A6B00BE4A27 /* AddPostBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostBuilder.swift; sourceTree = "<group>"; };
+		2F9DB62028B91C7600BE4A27 /* AddPostCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +135,9 @@
 		2F95DA3C28B7FA4600045663 /* AddPost */ = {
 			isa = PBXGroup;
 			children = (
+				2F9DB61D28B91A6100BE4A27 /* Builder */,
+				2F9DB61828B914C600BE4A27 /* ViewModel */,
+				2F9DB61728B914C000BE4A27 /* View */,
 			);
 			path = AddPost;
 			sourceTree = "<group>";
@@ -131,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				2F95DA5028B8019600045663 /* UserModel.swift */,
+				2F9DB61B28B919D000BE4A27 /* PostModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +184,7 @@
 				2F95DA4A28B7FD8E00045663 /* Coordinator.swift */,
 				2F95DA4C28B7FDD100045663 /* AppCoordinator.swift */,
 				2F95DA4E28B7FEBD00045663 /* PostsCoordinator.swift */,
+				2F9DB62028B91C7600BE4A27 /* AddPostCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -205,6 +222,31 @@
 				2F99973E28B8FC8400A0F4B8 /* Array-Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2F9DB61728B914C000BE4A27 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F9DB61328B9119500BE4A27 /* AddPostViewController.swift */,
+				2F9DB61428B9119500BE4A27 /* AddPostViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F9DB61828B914C600BE4A27 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2F9DB61928B915FE00BE4A27 /* AddPostViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2F9DB61D28B91A6100BE4A27 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				2F9DB61E28B91A6B00BE4A27 /* AddPostBuilder.swift */,
+			);
+			path = Builder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +310,7 @@
 				2F95DA3228B7A43200045663 /* LaunchScreen.storyboard in Resources */,
 				2F95DA2F28B7A43200045663 /* Assets.xcassets in Resources */,
 				2F95DA4028B7FA5F00045663 /* PostsViewController.xib in Resources */,
+				2F9DB61628B9119500BE4A27 /* AddPostViewController.xib in Resources */,
 				2F95DA5D28B8117B00045663 /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,8 +323,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F99973D28B8FB4B00A0F4B8 /* UITableView-Ext.swift in Sources */,
+				2F9DB61528B9119500BE4A27 /* AddPostViewController.swift in Sources */,
 				2F95DA5C28B8117B00045663 /* PostTableViewCell.swift in Sources */,
 				2F95DA4D28B7FDD100045663 /* AppCoordinator.swift in Sources */,
+				2F9DB62128B91C7600BE4A27 /* AddPostCoordinator.swift in Sources */,
+				2F9DB61C28B919D000BE4A27 /* PostModel.swift in Sources */,
+				2F9DB61F28B91A6B00BE4A27 /* AddPostBuilder.swift in Sources */,
 				2F95DA3F28B7FA5F00045663 /* PostsViewController.swift in Sources */,
 				2F95DA5128B8019600045663 /* UserModel.swift in Sources */,
 				2F95DA4828B7FB1600045663 /* PostsBuilder.swift in Sources */,
@@ -290,6 +337,7 @@
 				2F95DA2628B7A42E00045663 /* AppDelegate.swift in Sources */,
 				2F95DA4F28B7FEBD00045663 /* PostsCoordinator.swift in Sources */,
 				2F95DA5428B8032E00045663 /* DataUtils.swift in Sources */,
+				2F9DB61A28B915FE00BE4A27 /* AddPostViewModel.swift in Sources */,
 				2F99973A28B8F83400A0F4B8 /* PostsTableViewDelegate.swift in Sources */,
 				2F95DA4528B7FA8800045663 /* PostsViewModel.swift in Sources */,
 				2F99973F28B8FC8400A0F4B8 /* Array-Ext.swift in Sources */,
@@ -436,6 +484,7 @@
 				INFOPLIST_FILE = PostingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -463,6 +512,7 @@
 				INFOPLIST_FILE = PostingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

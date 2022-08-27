@@ -7,23 +7,25 @@
 
 import Foundation
 
-struct DataPresenter {
+final class DataPresenter {
     
     private var utilPosts: [PostModel] = DataUtils.posts.reversed()
+    
+    static let shared: DataPresenter = DataPresenter()
     
     var users: [UserModel] {
         return DataUtils.users
     }
     
     var posts: [PostModel] {
-        DataUtils.posts
+        utilPosts
     }
     
     func userPosts(for user: UserModel?) -> [PostModel] {
         utilPosts.filter { $0.user?.id == user?.id }
     }
     
-    mutating func addPost(with post: PostModel) {
+    func addPost(with post: PostModel) {
         utilPosts.insert(post, at: 0)
     }
 }

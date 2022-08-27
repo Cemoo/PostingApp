@@ -30,11 +30,11 @@ class PostTableViewCell: UITableViewCell {
         postDescriptionLabel.text = post.description ?? ""
         userImageView.image = UIImage(named: post.user?.userImage ?? "")
         
-        setPostImage(with: post.postImage ?? "")
+        setPostImage(with: post.postImage)
     }
     
-    private func setPostImage(with image: String) {
-        guard let postImage = UIImage(named: image) else {
+    private func setPostImage(with image: UIImage?) {
+        guard let postImage = image else {
             self.postImageView.isHidden = true
             return
         }

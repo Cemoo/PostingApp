@@ -29,6 +29,10 @@ class PostsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel.load(false)
     }
     
@@ -42,41 +46,32 @@ class PostsViewController: UIViewController {
         return nil
     }
     
-    private func setUI() {
-        self.title = "Posts"
-        
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.white
-        ]
-        
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissPicker)))
-        
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        
+    private func setUserButton() {
         selectUserButton.layer.borderColor = UIColor.white.cgColor
         selectUserButton.layer.borderWidth = 0.5
         selectUserButton.layer.cornerRadius = 8
         selectUserButton.setTitle(viewModel.selectedUser?.name ?? "Select User", for: .normal)
+    }
+    
+    private func setPickerView() {
+        pickerView.delegate = self
+        pickerView.dataSource = self
+    }
+    
+    private func setNavigationBar() {
+        let plusButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(openAddPostScreen))
+        plusButton.tintColor = .white
+        self.navigationItem.rightBarButtonItem = plusButton
         
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
+    }
+    
+    private func setTableView() {
         tableView.registerNib(nibName: "PostTableViewCell", cellIdentifier: PostTableViewCell.cellIdentifier)
         dataSource = PostTableViewDatasource()
         tableView.dataSource = dataSource
-        
-        segmentedControl.selectedSegmentIndex = 1
-
-    }
-    
-    @IBAction private  func selectUserAction(_ sender: Any) {
-        animatePicker()
-    }
-    
-    @objc private func dismissPicker() {
-        animatePicker()
-    }
-    
-    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        viewModel.load(sender.selectedSegmentIndex == 0)
     }
     
     private func animatePicker() {
@@ -88,6 +83,33 @@ class PostsViewController: UIViewController {
                 self.view.layoutIfNeeded()
             }
         }
+    }
+    
+    private func setUI() {
+        self.title = "Posts"
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissPicker)))
+        segmentedControl.selectedSegmentIndex = 1
+        
+        setNavigationBar()
+        setPickerView()
+        setUserButton()
+        setTableView()
+    }
+    
+    @IBAction private  func selectUserAction(_ sender: Any) {
+        animatePicker()
+    }
+    
+    @objc private func dismissPicker() {
+        animatePicker()
+    }
+    
+    @objc private func openAddPostScreen() {
+        viewModel.navigateAddPost()
+    }
+    
+    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        viewModel.load(sender.selectedSegmentIndex == 0)
     }
 }
 

@@ -13,6 +13,7 @@ protocol PostsViewModelProtocol: AnyObject {
     var posts: [PostModel] { get }
     var selectedUser: UserModel? { get set }
     
+    func navigateAddPost()
     func load(_ forUser: Bool)
 }
 
@@ -20,23 +21,30 @@ final class PostsViewModel: PostsViewModelProtocol {
     weak var view: PostsViewProtocol?
     var selectedUser: UserModel?
 
-    private var presenter: DataPresenter
+    private let coordinator: Coordinator
     private var forUser: Bool = false
    
-    init() {
-        presenter = DataPresenter()
+    init(with coordinator: Coordinator) {
+        self.coordinator = coordinator
     }
     
     var users: [UserModel] {
-        presenter.users
+        DataPresenter.shared.users
     }
     
     var posts: [PostModel] {
-        forUser ? presenter.userPosts(for: selectedUser) : presenter.posts
+        forUser ? DataPresenter.shared.userPosts(for: selectedUser) : DataPresenter.shared.posts
     }
     
     func load(_ forUser: Bool = false) {
         self.forUser = forUser
         view?.reloadPosts()
     }
+    
+    func navigateAddPost() {
+        guard let user = selectedUser else { return }
+        let coordinator = AddPostCoordinator(with: coordinator.navigationController, user: user)
+        coordinator.start()
+    }
 }
+

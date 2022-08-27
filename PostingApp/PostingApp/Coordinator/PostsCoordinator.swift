@@ -18,7 +18,8 @@ final class PostsCoordinator: Coordinator {
     }
     
     func start() {
-        let postsVC = PostsBuilder.generate(with: PostsViewModel())
+        let postsVC = PostsBuilder.generate(with: PostsViewModel(with: self))
         navigationController?.pushViewController(postsVC, animated: true)
     }
+
 }

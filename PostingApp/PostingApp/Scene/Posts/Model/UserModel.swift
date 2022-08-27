@@ -7,18 +7,11 @@
 
 import UIKit
 
-struct UserModel: Codable {
+struct UserModel {
     let id : String?
     let name: String?
     let userName: String?
     let userImage: String?
 }
 
-struct PostModel: Codable {
-    let postId: String?
-    let title: String?
-    let description: String?
-    let postImage: String?
-    let user: UserModel?
-}
 
