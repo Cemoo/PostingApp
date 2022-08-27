@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F2F61D528BA2CB50012C903 /* UIViewController-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2F61D428BA2CB50012C903 /* UIViewController-Ext.swift */; };
 		2F95DA2628B7A42E00045663 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F95DA2528B7A42E00045663 /* AppDelegate.swift */; };
 		2F95DA2F28B7A43200045663 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F95DA2E28B7A43200045663 /* Assets.xcassets */; };
 		2F95DA3228B7A43200045663 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F95DA3028B7A43200045663 /* LaunchScreen.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F2F61D428BA2CB50012C903 /* UIViewController-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-Ext.swift"; sourceTree = "<group>"; };
 		2F95DA2228B7A42E00045663 /* PostingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F95DA2528B7A42E00045663 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F95DA2E28B7A43200045663 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				2F99973C28B8FB4B00A0F4B8 /* UITableView-Ext.swift */,
 				2F99973E28B8FC8400A0F4B8 /* Array-Ext.swift */,
+				2F2F61D428BA2CB50012C903 /* UIViewController-Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F2F61D528BA2CB50012C903 /* UIViewController-Ext.swift in Sources */,
 				2F99973D28B8FB4B00A0F4B8 /* UITableView-Ext.swift in Sources */,
 				2F9DB61528B9119500BE4A27 /* AddPostViewController.swift in Sources */,
 				2F95DA5C28B8117B00045663 /* PostTableViewCell.swift in Sources */,

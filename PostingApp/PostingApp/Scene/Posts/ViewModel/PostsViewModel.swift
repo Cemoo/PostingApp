@@ -18,12 +18,16 @@ protocol PostsViewModelProtocol: AnyObject {
 }
 
 final class PostsViewModel: PostsViewModelProtocol {
+    
+    // MARK: - Public  Properties
     weak var view: PostsViewProtocol?
     var selectedUser: UserModel?
 
+    // MARK: - Private Properties
     private let coordinator: Coordinator
     private var forUser: Bool = false
    
+    // MARK: - Init
     init(with coordinator: Coordinator) {
         self.coordinator = coordinator
     }
@@ -42,7 +46,11 @@ final class PostsViewModel: PostsViewModelProtocol {
     }
     
     func navigateAddPost() {
-        guard let user = selectedUser else { return }
+        guard let user = selectedUser else {
+            self.view?.showError(withMessage: "Please select a user")
+            return
+        }
+        
         let coordinator = AddPostCoordinator(with: coordinator.navigationController, user: user)
         coordinator.start()
     }

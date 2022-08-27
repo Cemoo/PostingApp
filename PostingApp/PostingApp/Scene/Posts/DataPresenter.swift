@@ -9,8 +9,10 @@ import Foundation
 
 final class DataPresenter {
     
+    // MARK: - Private Properties
     private var utilPosts: [PostModel] = DataUtils.posts.reversed()
     
+    // MARK: - Shared Instance
     static let shared: DataPresenter = DataPresenter()
     
     var users: [UserModel] {

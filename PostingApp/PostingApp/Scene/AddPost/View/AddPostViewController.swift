@@ -41,6 +41,7 @@ class AddPostViewController: UIViewController, AddPostViewProtocol {
     
     private func setUI() {
         self.title = "Add Post"
+        self.navigationController?.navigationBar.tintColor = .white
         self.navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
@@ -55,6 +56,7 @@ class AddPostViewController: UIViewController, AddPostViewProtocol {
         self.navigationItem.rightBarButtonItem = imageButton
     }
     
+    // MARK: - Init
     init(viewModel: AddPostViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: "AddPostViewController", bundle: nil)

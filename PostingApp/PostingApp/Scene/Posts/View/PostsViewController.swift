@@ -10,6 +10,7 @@ import UIKit
 protocol PostsViewProtocol: AnyObject {
     func reloadPicker()
     func reloadPosts()
+    func showError(withMessage message: String)
 }
 
 class PostsViewController: UIViewController {
@@ -144,5 +145,9 @@ extension PostsViewController: PostsViewProtocol {
     func reloadPosts() {
         dataSource?.update(with: viewModel)
         tableView.reloadData()
+    }
+    
+    func showError(withMessage message: String) {
+        showMessage(withMessage: message)
     }
 }

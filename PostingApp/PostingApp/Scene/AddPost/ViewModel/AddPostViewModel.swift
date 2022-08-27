@@ -15,11 +15,14 @@ protocol AddPostViewModelProtocol: AnyObject {
 
 final class AddPostViewModel: AddPostViewModelProtocol {
 
+    // MARK: - Private Properties
     private let user: UserModel
     private var presenter: DataPresenter?
 
+    // MARK: - Public Properties
     weak var view: AddPostViewProtocol?
     
+    // MARK: - Init
     init(with user: UserModel) {
         self.user = user
     }
